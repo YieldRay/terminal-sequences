@@ -1,4 +1,3 @@
-// Assuming ESC is defined in c0.ts
 import { ESC } from "./c0.ts";
 
 /**

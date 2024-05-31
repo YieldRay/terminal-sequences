@@ -1,5 +1,5 @@
 import { Ps } from "./_shared.ts";
-import { ESC, BEL } from "./c0.ts";
+import { BEL, ESC } from "./c0.ts";
 
 /**
  * Set window title and icon name.
@@ -19,12 +19,14 @@ export const OSC2 = (pt: string) => `${ESC}]2;${pt}${BEL}`;
 /**
  * Change color number c to the color specified by spec.
  */
-export const OSC4 = (c: number, spec: string) => `${ESC}]4;${Ps(c)};${Ps(spec)}${BEL}`;
+export const OSC4 = (c: number, spec: string) =>
+    `${ESC}]4;${Ps(c)};${Ps(spec)}${BEL}`;
 
 /**
  * Create a hyperlink to uri using params.
  */
-export const OSC8 = (params: string, uri: string) => `${ESC}]8;${Ps(params)};${Ps(uri)}${BEL}`;
+export const OSC8 = (params: string, uri: string) =>
+    `${ESC}]8;${Ps(params)};${Ps(uri)}${BEL}`;
 
 /**
  * Set or query default foreground color.

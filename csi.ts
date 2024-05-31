@@ -1,5 +1,5 @@
 import { CSI } from "./esc.ts";
-import { Ps, Pm, SP } from "./_shared.ts";
+import { Pm, Ps, SP } from "./_shared.ts";
 
 /**
  * Insert Characters
@@ -258,7 +258,7 @@ export const DECRST = (...pm: number[]) => `${CSI}?${Pm(pm)}l`;
  *
  * Sets/Resets various text attributes.
  */
-export const SGR = (...pm: (number|undefined)[]) => `${CSI}${Pm(pm)}m`;
+export const SGR = (...pm: (number | undefined)[]) => `${CSI}${Pm(pm)}m`;
 
 /**
  * Device Status Report
@@ -307,7 +307,8 @@ export const DECSCUSR = (ps?: number) => `${CSI}${Ps(ps)}${SP}q`;
  *
  * Sets top and bottom margins of the viewport [top;bottom] (default = viewport size).
  */
-export const DECSTBM = (top?: number, bottom?: number) => `${CSI}${Ps(top)};${Ps(bottom)}r`;
+export const DECSTBM = (top?: number, bottom?: number) =>
+    `${CSI}${Ps(top)};${Ps(bottom)}r`;
 
 /**
  * Save Cursor

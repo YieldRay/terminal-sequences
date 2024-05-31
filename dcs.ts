@@ -1,5 +1,5 @@
 import { ESC } from "./c0.ts"; // Assuming ST (String Terminator) is defined in c0.ts
-import { Ps   } from "./_shared.ts";
+import { Ps } from "./_shared.ts";
 import { ST } from "./c1.ts";
 
 /**
@@ -15,7 +15,8 @@ export const SIXEL = (p1?: number, p2?: number, p3?: number, pt?: string) =>
  *
  * Definitions for user-defined keys.
  */
-export const DECUDK = (p1?: number, p2?: number, pt?: string) => `${ESC}P${Ps(p1)};${Ps(p2)}|${pt ?? ""}${ST}`;
+export const DECUDK = (p1?: number, p2?: number, pt?: string) =>
+    `${ESC}P${Ps(p1)};${Ps(p2)}|${pt ?? ""}${ST}`;
 
 /**
  * Request Terminfo String
