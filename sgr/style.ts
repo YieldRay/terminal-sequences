@@ -5,10 +5,10 @@ import { SGR } from "../csi.ts";
 /** Reset all attributes */
 export const reset = SGR(0); 
 
-/** Bold text */
+/** Bold text or increased intensity */
 export const bold = SGR(1);  
 
-/** Faint text */
+/** Faint text, decreased intensity, or dim */
 export const faint = SGR(2); 
 
 /** Italic text */
@@ -23,13 +23,13 @@ export const blinkSlow = SGR(5);
 /** Rapid blink */
 export const blinkRapid = SGR(6); 
 
-/** Inverse colors */
+/** Inverse colors (swap foreground and background colors) */
 export const inverse = SGR(7); 
 
-/** Hidden text */
+/** Conceal text */
 export const hidden = SGR(8); 
 
-/** Strikethrough text */
+/** Crossed-out text */
 export const strikeThrough = SGR(9); 
 
 // Foreground colors
