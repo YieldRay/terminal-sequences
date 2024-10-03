@@ -1,15 +1,25 @@
 # Terminal Sequences
 
-> [!WARNING]\
-> WIP
+Terminal sequences (also known as escape sequences or control sequences) are special character combinations used to control the appearance and behavior of computer terminals. They allow you to do things like:
 
-What are terminal sequences? see [here](https://xtermjs.org/docs/guides/hooks/#background---what-are-terminal-sequences).
+- Change text color and style
+- Move the cursor
+- Clear the screen
+- Send special signals to the terminal
 
-reference:
+For a detailed introduction to terminal sequences, see [xtermjs.org's guide](https://xtermjs.org/docs/guides/hooks#background---what-are-terminal-sequences).
+
+See also:
 
 - <https://ecma-international.org/publications-and-standards/standards/ecma-48/>
 - <https://www.man7.org/linux/man-pages/man4/console_codes.4.html>
 - <https://xtermjs.org/docs/api/vtfeatures/>
+
+> [!TIP]\
+> This project aims to provide comprehensive support for terminal sequences, encompassing both advanced terminal control and basic string styling.\
+> If your primary need is terminal string styling, you might prefer a dedicated library like [Chalk](https://github.com/chalk/chalk) for a simpler and more focused approach.
+
+# Usage
 
 ```ts
 import { SR } from "./csi.ts";
@@ -18,8 +28,18 @@ import { SR } from "./csi.ts";
 console.log(SR());
 ```
 
-It is often the case that terminal sequences are used exclusively for TTY interfaces.\
-For example, in Node.js, you can refer to [A note on process I/O](https://nodejs.org/api/process.html#process_a_note_on_process_i_o) for more information.
+Terminal sequences are primarily designed for interactive TTY (teletype) interfaces. In other contexts, like piping output to a file or processing it programmatically, these sequences may not be interpreted correctly and can clutter the output.
+
+For example, Node.js provides insights into process I/O behavior in its documentation: [A note on process I/O](https://nodejs.org/api/process.html#process_a_note_on_process_i_o).
+
+Also, before emitting color codes, it's crucial to verify if the terminal supports them. This prevents garbled output in unsupported environments.
+
+Here's a available approach:
+
+```ts
+import { checkIsColorSupported } from "./detection.ts";
+const isColorSupported = detectIsColorSupported();
+```
 
 # SGR (Select Graphic Rendition)
 
