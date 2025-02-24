@@ -14,6 +14,7 @@ See also:
 - <https://ecma-international.org/publications-and-standards/standards/ecma-48/>
 - <https://www.man7.org/linux/man-pages/man4/console_codes.4.html>
 - <https://xtermjs.org/docs/api/vtfeatures/>
+- <https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797>
 
 > [!TIP]\
 > This project aims to provide comprehensive support for terminal sequences, encompassing both advanced terminal control and basic string styling.\
